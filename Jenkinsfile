@@ -1,13 +1,11 @@
 pipeline {
-    agent {
-        docker { 
-            image 'maven:3.9-eclipse-temurin-17' 
-        }
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Debug Info') {
             steps {
-                sh 'mvn test'
+                echo "Printing Path Settings:"
+                sh 'echo $PATH'
+                sh 'which docker'
             }
         }
     }
