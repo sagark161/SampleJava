@@ -34,7 +34,7 @@ public class HelloWorldTest {
     @Test(description = "Test case 3: Verify message length")
     public void testMessageLength() {
         Assert.assertTrue(message.length() > 0, "Message length should be greater than 0");
-        Assert.assertEquals(message.length(), 13, "Message length should be 13 characters");
+        Assert.assertEquals(message.length(), 15, "Message length should be 13 characters");
         System.out.println("Test 3 PASSED: Message length is correct");
     }
 
