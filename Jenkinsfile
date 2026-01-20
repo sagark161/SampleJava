@@ -1,10 +1,17 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage('Hello') {
+        stage('Test') {
             steps {
-                echo "Jenkins found this new branch automatically! 🚀"
+                // We use the full path that we know works on your Mac
+                sh '/opt/homebrew/bin/mvn clean test' 
             }
+        }
+    }
+    post {
+        always {
+            // This reads the XML files Maven creates
+            junit '**/target/surefire-reports/*.xml'
         }
     }
 }
